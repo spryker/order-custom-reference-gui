@@ -25,12 +25,6 @@ class OrderCustomReferenceGuiToOrderCustomReferenceFacadeBridge implements Order
         $this->orderCustomReferenceFacade = $orderCustomReferenceFacade;
     }
 
-    /**
-     * @param string $orderCustomReference
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderCustomReferenceResponseTransfer
-     */
     public function updateOrderCustomReference(
         string $orderCustomReference,
         OrderTransfer $orderTransfer

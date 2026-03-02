@@ -38,11 +38,6 @@ class SalesController extends AbstractController
      */
     protected const PARAM_BACK_URL = 'backUrl';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function saveAction(Request $request): RedirectResponse
     {
         $orderCustomReference = (string)$request->request->get(static::PARAM_ORDER_CUSTOM_REFERENCE);
@@ -66,11 +61,6 @@ class SalesController extends AbstractController
         return $this->redirectResponse($backUrl);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderCustomReferenceResponseTransfer $orderCustomReferenceResponseTransfer
-     *
-     * @return void
-     */
     protected function addErrorMessages(OrderCustomReferenceResponseTransfer $orderCustomReferenceResponseTransfer): void
     {
         foreach ($orderCustomReferenceResponseTransfer->getMessages() as $messageTransfer) {

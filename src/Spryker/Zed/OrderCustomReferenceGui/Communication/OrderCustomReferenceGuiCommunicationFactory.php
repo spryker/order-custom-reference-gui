@@ -13,9 +13,6 @@ use Spryker\Zed\OrderCustomReferenceGui\OrderCustomReferenceGuiDependencyProvide
 
 class OrderCustomReferenceGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\OrderCustomReferenceGui\Dependency\Facade\OrderCustomReferenceGuiToOrderCustomReferenceFacadeInterface
-     */
     public function getOrderCustomReferenceFacade(): OrderCustomReferenceGuiToOrderCustomReferenceFacadeInterface
     {
         return $this->getProvidedDependency(OrderCustomReferenceGuiDependencyProvider::FACADE_ORDER_CUSTOM_REFERENCE);

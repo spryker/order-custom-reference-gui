@@ -18,11 +18,6 @@ class OrderCustomReferenceGuiDependencyProvider extends AbstractBundleDependency
      */
     public const FACADE_ORDER_CUSTOM_REFERENCE = 'FACADE_ORDER_CUSTOM_REFERENCE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -31,11 +26,6 @@ class OrderCustomReferenceGuiDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addOrderCustomReferenceFacade(Container $container): Container
     {
         $container->set(static::FACADE_ORDER_CUSTOM_REFERENCE, function (Container $container) {
