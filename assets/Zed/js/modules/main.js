@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     $wrapper.on('click', triggerSelector, function () {
         $target.each(function () {
-            $(this).toggleClass('hide');
+            $(this).toggleClass($wrapper.attr('data-toggle-class'));
         });
     });
 });

@@ -1,9 +1,11 @@
 {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Custom Order Reference' } %}
     {% block widget_content %}
-        <div class="js-customer-order-reference">
+        {% set hiddenClass = 'hidden' %}
+
+        <div class="js-customer-order-reference" data-toggle-class="{{ hiddenClass}}">
             <div class="row js-toggle-target">
                 <div class="col-sm-9">
-                    {{ data.order.orderCustomReference }}
+                    {{ data.order.orderCustomReference | default('No custom reference set' | trans) }}
                 </div>
                 <div class="col-sm-3 text-right">
                     <button class="btn btn-default js-toggle-trigger">
@@ -12,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="js-toggle-target hide">
+            <div class="js-toggle-target {{ hiddenClass }}">
                 <form action="{{ url('/order-custom-reference-gui/sales/save') }}" method="POST">
                     <div class="form-group">
                         <label for="orderCustomReference" class="control-label">{{ 'Custom Order Reference' | trans }}</label>
